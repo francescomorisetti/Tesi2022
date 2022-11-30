@@ -1,0 +1,281 @@
+Horace README, version 3.2
+==========================
+Horace is an event generator for Drell-Yan processes at hadron colliders
+including the ElectroWeak radiative corrections. The generator is
+developed and mantained by C.M. Carloni Calame [1], G. Montagna [1,2],
+O. Nicrosini [1] and A. Vicini [3].
+
+[1] INFN, Sezione di Pavia (Italy)
+[2] Dipartimento di Fisica, Universita' di Pavia (Italy)
+[3] Dipartimento di Fisica, Universita' di Milano, and INFN, Sezione di Milano
+    (Italy)
+
+For information, updates and citing the code, please refer to the web page
+
+http://www.pv.infn.it/hepcomplex/horace.html
+
+Changelog
+---------
+3.1 -> 3.2:
+Version 3.2 was used for the report "Precision Studies of
+Observables in pp->W->l\nu and pp->\gamma,Z->l+l- processes at the LHC" by
+S. Alioli et al. (http://inspirehep.net/record/1468163).
+W.r.t. version 3.1, the generation efficiency is improved and some
+small bug have been fixed.
+The generator is now interfaced by default to LHAPDF parton
+distribution functions and the input file has been cleaned up.
+Instructions to reproduce the numbers published in the report are
+given at the end of this file.
+Other changes:
+
+1) in the previous version, it was assumed that for the parton
+densities s=s_bar, c=c_bar, b=b_bar. Now the densities from PDFs are
+taken without any assumption.
+
+2) A new parameter in input has been introduced to choose the PDF
+renormalization/factorization scale (see below).
+
+3) Three possible choices are now available for EW input scheme for
+neutral current Drell-Yan (for charged current ony 0 and 1 are active):
+  0 - alpha(0) scheme,
+  1 - G_mu scheme,
+  2 - IBA, which includes vacuum polarization in the photon exchange
+      diagrams, and some universal higher order corrections.
+
+4) The libraries LoopTools and Cuba are updated to the latest
+version (2.13 and 4.2 respectively), which should work better with
+modern compilers and on more platforms.
+Both libraries have been patched to work within Horace as expected.
+
+
+3.0 -> 3.1:
+3.1 is essentially a bug fix release. Some of the bugs
+pointed out by Horace users have been fixed. In particular,
+1) the bad behaviour of one-loop radiative corrections at very
+   low invariant masses in W production (< 2-3 GeV) has been
+   corrected
+2) the crashes appearing when running without cuts and
+   occurring in the limits of the phase space have been resolved
+   Furthermore, in release 3.1, also tau final state can be
+   selected and the name of the statistics file saved in the
+   output directory is determined by the run parameters and has
+   the .stat extension.
+
+Compiling the code
+------------------------------
+Horace is written in standard FORTRAN.
+
+A Makefile is provided in order to build the executable file 'horace'.
+
+Prior to compilation, the user must set the LHAPDFLIB and REPORT
+variables in the Makefile and set the compilers in compilers.in.
+
+The code has been tested to work with GCC (version >= 4.7.2).
+
+The Horace package includes a copy of the libraries LoopTools
+(http://www.feynarts.de/looptools/, v. 2.13, patched to cover
+the complex W and Z mass in vertex and box functions as required by
+the Horace approach), Cuba (http://www.feynarts.de/cuba/, v. 4.2,
+for the calculation of the subtraction terms) and includes the file hadr5n16.f by F.
+Jegerlehner (http://www-com.physik.hu-berlin.de/~fjeger/) for the calculation of
+the hadronic contribution to the vacuum polarization.
+
+Running Horace
+--------------
+If the LHAPDF libraries are dinamically linked, please make sure the
+LD_LIBRARY_PATH environment variable is properly set before running HORACE.
+
+The value of the input parameters which have to be provided to the program
+can be conveniently specified in the file input-test.
+
+Input parameters (see below for a more detailed description)
+------------------------------------------------------------
+
+new                   ! HORACE mode: old = only final state QED in Parton Shower
+                                           approximation,
+                                     new = exact O(alpha) EW corrections matched
+                                           with  higher orders QED
+
+alpha                 ! order of radiative corrections
+                              alpha = up to first order corrections
+                              exp   = alpha + higher-order QED (best)
+                              born  = Born cross-section
+
+2212                  ! initial state hadrons: 2212 protons, -2212 antiprotons
+2212
+
+1                     ! PDF set in HORACE (through LHAPDF)
+                          1 = MSTW2008nlo68cl
+                          2 = NNPDF23_lo_as_0130_qed
+                          any other set should be enabled by modifing
+                          PDF.f accordingly, it should be straightforward.
+
+14000.                ! CoM energy (GeV)
+
+W+andW-               ! boson Drell-Yan production
+                        possible choices: W+, W-, W+andW-, Z
+
+1                     ! EW input scheme:
+                        0 = pure alpha, M_W, M_Z input scheme
+                        1 = G_\mu scheme for W and Z production
+			2 = IBA for Z production (active only for Z)
+			
+1                     ! Choice of the PDF renormalization/factorization scale
+                      ! 1 --> fixed to M_boson
+		      ! 2 --> running, sqrt(M_leptons^2)
+		      ! 3 --> running, sqrt(M_leptons^2 + pt_lepton_pair^2)
+		      
+muon                  ! final state lepton(s)
+                        possible choices: muon, electron, tau
+
+test_run/             ! name of the directory where all the data of the 
+                      ! run will be saved
+
+10000                 ! number of events
+
+unweighted            ! unweightening:
+                        possible choices are: weighted, unweighted
+
+15.                   ! rescaling factor to adjust the efficiency of the
+                        unweightening procedure
+
+yes                   ! if events have to be stored (yes/no)
+
+read                  ! mode to include the subtraction terms
+                        possible choices are: read, calculate
+
+subtractionfile.dat   ! file of subtraction terms
+
+no                    ! if photon-induced processes have to be included (yes/no)
+
+1234234               ! seed for r.n.g.
+
+**NB**
+Any generation cut must be implemented in the file cuts.f. The file
+should be self-explaining.
+******
+
+If the option unweighted is chosen, the program will generate the requested 
+number of unweighted events (given the unweightening efficiency, a larger number
+of points will be generated in the phase-space).
+If the option weighted is chosen, the program will generate the specified
+number of points and compute the cross-section and the distributions.
+
+The rescaling factor to adjust the efficiency of the unweightening procedure
+changes the maximum value in the "hit or miss" procedure:
+if too large the efficiency decreases, if too small a certain number of points
+could exceed the maximum value and can not be correctly unweighted, introducing
+a bias in the estimate of the hit or miss cross section.
+In the output file '*.stat' a recommended value for this parameter 
+is suggested 'a posteriori' and the bias induced by the points which exceed the 
+maximum is evaluated. The rescaling factor must be chosen large enough to
+make the bias vanish. Nevertheless, a smaller value can increase the efficiency
+while keeping the bias at a tolerable level.
+
+For a given hadronic center-of-mass energy, for a given choice of the PDF and
+the PDF factorization scale, the program allows to compute only once the
+subtraction terms which remove the initial state collinear singularities.
+When the variable which specifies the subtraction mode is set to 'calculate'
+the subtraction terms are computed and saved in the file 'subtractionfile.dat' 
+(which can be set in input). The next time, the program can be run with the 
+subtraction mode 'read', and the grid which interpolates the subtraction terms
+is read from the file 'subtractionfile.dat'.
+
+We provide also a routine to apply selection cuts to the event sample. By
+default, we impose cuts on the lepton and neutrino (or leptons) pt and 
+lepton(s) pseudorapidity.
+The user can implement his/her own cuts by modifying the file cuts.f.
+
+The events produced by HORACE can be dumped to an external file
+(test_run/*.evts) and can be given as input to standard showering
+Monte Carlo generators using the Les Houches Interface Accord.
+
+User modifiable routines
+------------------------
+The subroutines the user may need to modify are:
+-> 'userinterface' (in the file init.f) where the masses and widths of the 
+    elementary particles, the values of the coupling constants and of
+    the CKM matrix are defined
+
+-> 'initPDFhorace' (in the file PDF.f) where it is possible to choose
+   the available PDF sets. From version 3.2 we only provide an
+   interface to LHAPDF. 
+
+-> 'cuts' (in the file cuts.f) where the experimental are implememted
+
+-> 'initrng' and 'wraprng' (in the file routines.f), initialization
+   and wrapper for the random number generator.
+
+Output files
+------------
+The output files are saved in the 'test_run/' directory (which can be set
+by the user). 
+   The files are
+
+-> *.stat: it is the file where cross
+   sections, statistics information, input parameters, etc. are printed.
+   After the input parameters entered by the user, the weighted integrated
+   cross section is printed.
+   It is subdivided by photon multiplicity: each cross section
+   depends on the 'eps' parameter but the sum does not.
+   After weighted cross section information, the unweighted events statistics
+   is reported. The user must pay attention to the "biases" cross sections:
+   they account for the biases due to negative weights events and unweightening
+   failure due to an under-estimated maximum of the differential cross section.
+   The latter bias  is usually negligible, its size is estimated by the
+   corresponding cross section.
+
+-> distribution files: in these files some differential distribution
+   are written. The file names should be self-explaining and the data are in the
+   form (e.g. to be easily plotted with gnuplot):
+   lower bin edge - differential cross section - corresponding error
+
+   By default, the following distributions are saved:
+    - lepton transverse momentum distribution, in different ranges
+      (ptl1, ptl2, ptl3)
+    - missing (or lepton) transverse momentum distribution, in different ranges
+      (ptn1, ptn2, ptn3)
+    - W or Z/gamma transverse mass distribution, in different ranges
+      (mtv1, mtv2, mtv3)
+    - lepton pseudorapidity distribution (etal)
+    - neutrino (or lepton) pseudorapidity distribution (etan)
+    - W or Z/gamma rapidity distribution (yv)
+    - W or Z/gamma transverse momentum distribution (ptv)
+    - most energetic photon transverse momentum distribution (ptg)
+    - most energetic photon rapidity distribution (etag)
+    - W  or Z/gamma invariant mass distribution in different ranges (minv, mhi)
+
+Les-Houches-Accord-format event dumping
+---------------------------------------
+If the option of saving events is set to 'y', a file .evts and a file .conf are
+saved in the output directory. The events are stored in a LHA compliant format
+(mainly stolen from ALPGEN). The events are dumped by the routine
+'storehoraceevent' (in the file storage.f). The weight corresponding to the events
+is +1 or -1 in case of unweighted generation or the event cross section in
+case of weighted generation (which can be also negative).
+
+How to reproduce the report numbers
+-----------------------------------
+- Set in the Makefile the "REPORT=-DREPORT" variable, which selects the
+  correct cuts and input parameters according to the tuned or benchmark
+  setup;
+
+- make sure the variable "LHAPDFLIB" in the Makefile points to the
+  installation of LHAPDF **version 5.9.1** (any other version might
+  give slightly different results). Make sure you have MSTW2008nlo68cl
+  PDF set installed;
+
+- compile horace ("make horace");
+
+- as examples, a set of input files (input-report-*) is provided to
+  reproduce NLO results from tables 3, 7, 9 and 11 of the report,
+  which should be fed as input to horace;
+
+- run the program issuing the command
+
+  LD_LIBRARY_PATH=PATH_TO_YOUR_LHAPDFLIB_DIR ./horace < INPUTFILE
+
+
+   Enjoy Horace!
+
+                       Alessandro, Carlo, Guido, Oreste

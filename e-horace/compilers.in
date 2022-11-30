@@ -1,0 +1,5 @@
+### define here your GCC compilers
+
+F77=gfortran
+CC=gcc
+CXX=g++

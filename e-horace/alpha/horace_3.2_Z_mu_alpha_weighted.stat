@@ -1,0 +1,49 @@
+  
+ Requested number of weighed events:    10000000.000000000     
+ Unweighted event n.    1160.0000000000000     
+ Weighted event n.    17828165.000000000     
+ Weighted events after cuts              10000001
+  
+ Initial state particles:  2212  -2212
+ PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+  
+ C. of m. energy =    100.00 GeV
+ Z/photon production, decaying into muons
+  
+ W mass      =    80.358000000000004       GeV
+ W width     =    2.0840000000000001       GeV
+ Z mass      =    91.153499999999994       GeV
+ Z width     =    2.4943000000000000       GeV
+ sin^2(th_w) =   0.22283802942357611     
+ delta_r     =    2.9563345808594349E-002  (one-loop EW delta_r)        
+  
+ EW RC: alpha  (MATCHED QED PS)
+  EW input scheme:            1
+  
+ hit or miss cross section  =       20.9028443 +-        0.6137087 (pb)
+ h. or m. out-of-range bias =        2.3831462 +-       0.5310366 (pb)
+ weighted cross section     =       23.0611136 +-        0.6391774 (pb)
+  
+ h. or m. efficiency =   0.00651 %    (out of range =     59)
+ (upper limit =   5.0000000000000000      , to be set to   85.187270156355140      )
+  
+ Events not stored
+ Partial cross sections:
+             0  photons:   14.959052946009816       +-  0.52001866734617819                 (npoints:      4446576 )
+             1  photons:   8.1020606328496410       +-  0.37167449409983844                 (npoints:      5553425 )
+  
+ Negative weights statistics:
+  n. of weighted points   =           0
+  n. of unweighted events =                    0
+  cross section    0.0000000000000000       +-   0.0000000000000000     
+  
+ partial q-q['][bar] contributions
+          -1           1     2.3941510880380295E-009 +-   1.7707832750618780E-009 (   73.962887468100774      %)
+           1          -1     23.061113576466031      +-  0.63917739914861815      (   2.7716675390771308      %)
+ Sum:    23.061113578860184     
+ ....
+ Started by user ID        1000  on , process ID       64690
+ ....
+ Running time statistics:
+ program started                  1158  s ago
+ CPU time =         1155  s (of which         1152  s user time)
