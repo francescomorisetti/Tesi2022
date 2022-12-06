@@ -170,13 +170,13 @@
 ! (x1*xmin <y < x1*xmax) according to a multi-channel BW or 1/y
          if (boson.eq.'Z') then
             am = mz
-            ag = gz
-            a  = 2.3d0
+            ag = gz  !larghezza del picco
+            a  = 0.9d0  !parametro per l'andamento a piccolo x
 c            a  = 4.d0
          else
             am = mw
             ag = gw
-            a  = 1.3d0
+            a  = 1.3d0   
 c            a  = 4.d0            
          endif
 
@@ -192,27 +192,38 @@ c     >        - atan( ymin*s/am/ag-am/ag ) )
 c         anbw = bwnormstandard(ymax,ymin)
          
          uma  = 1.d0 - a
-         an13 = 1.d0/uma*(ymax**uma - ymin**uma)
+         an13 = 1.d0/uma*(ymax**uma - ymin**uma)  !variabili per la cumulativa
 
-         pbw  = 0.5d0
+         pbw  = 0.5d0 !probabilità breit-wigner
 c         pbw  = 0.d0
-         pomy = 1.d0 - pbw
+         pomy = 1.d0 - pbw !canale di x piccolo
 
 *     for y, I use a multi-channel sampling, in order to flatten both BW and
 *     1/y (implied by PDFs) peaks.....         
-         call wraprng(rnd,2)
+         call wraprng(rnd,2) !decide quale dei due campionemaneti fare
          if (rnd(1).lt.pbw) then             
 c            y    = 1.d0*rnd(2)
 c            tmp  = atan(ymin*s/am/ag-am/ag)
 c            y    = ag*am/s*( tan(s*am*ag*anbw*y+tmp)+am/ag )
-            call bwsampleaMC(ymax,ymin,y,wbw)
+            call bwsampleaMC(ymax,ymin,y,wbw) !campionamento breit wigner (lascio stare)
 c          call bwstandard(ymax,ymin,y,wbw)
             wbw = 1.d0/wbw
-         else
+         else       !questa è la parte da modificare, rnd(2) viene generato piatto
 c            y = ymin*exp(aln*rnd(2))            
 c            y = (ymax-ymin)*rnd(2) + ymin ! flat...
-            y = uma * an13 * rnd(2) + ymin**uma ! as y**-a
-            y = y **(1.d0/uma)
+
+
+c            y = uma * an13 * rnd(2) + ymin**uma ! as y**-a
+c            y = y **(1.d0/uma)
+            
+************************************************************************            
+!Parte modificata da me
+ 
+c             y = 1.d0 - (1 - uma*rnd(2))**(1.d0/uma)
+            
+              y = 1.d0 - (-uma*rnd(2) + (1.d0 - ymin)**uma)**(1.d0/uma)
+            
+****************************************************************************            
          wbw  = y/anbw/((y-amaMC*amaMC)**2+amaMC*amaMC*agaMC*agaMC)
 c         wbw  = 1.d0/anbw/((y-amaMC*amaMC)**2+amaMC*amaMC*agaMC*agaMC)
          endif
@@ -678,6 +689,8 @@ c         if (pdf1i.lt.0.d0) pdf1i = 0.d0
 c         if (pdf2j.lt.0.d0) pdf2j = 0.d0
          pdfpdf(i,j) = pdf1(i)*pdf2(j)! pdf1i*pdf2j
          sumpdfpdf = sumpdfpdf + abs(pdfpdf(i,j))
+c sumpdfpdf probabilità totale processi
+
       enddo 
 * It can happen that the pdf product for a given x1, x2 is zero for all
 * the particles. In this case, no process can occur: I keep ipart1 
@@ -697,6 +710,7 @@ c         if (pdf2j.lt.0.d0) pdf2j = 0.d0
          i = -j
          psum   = psum + abs(pdfpdf(i,j))
          psum_n = psum/sumpdfpdf
+c psum_n robabilità canale n-esimo
 
          if (psum_n.gt.rnd(1)) then ! i,j correspond to 
                                 ! the occurring

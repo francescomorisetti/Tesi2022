@@ -1,8 +1,8 @@
   
- Requested number of weighed events:    20000000.000000000     
- Unweighted event n.    2041.0000000000000     
- Weighted event n.    32083031.999999996     
- Weighted events after cuts              20000001
+ Requested number of weighed events:    1000000.0000000000     
+ Unweighted event n.    69.000000000000000     
+ Weighted event n.    1452156.0000000000     
+ Weighted events after cuts               1000000
   
  Initial state particles:  2212  -2212
  PDFs: NLL_DELTA_MSBAR                          (eMELA)  
@@ -20,16 +20,16 @@
  EW RC: born   (MATCHED QED PS)
   EW input scheme:            1
   
- hit or miss cross section  =       20.4372116 +-        0.4523622 (pb)
- h. or m. out-of-range bias =        2.3215716 +-       0.3623654 (pb)
- weighted cross section     =       23.0003907 +-        0.4472432 (pb)
+ hit or miss cross section  =       15.2647557 +-        1.8376170 (pb)
+ h. or m. out-of-range bias =        0.6142509 +-       0.3790543 (pb)
+ weighted cross section     =       16.4869943 +-        0.8571967 (pb)
   
- h. or m. efficiency =   0.00636 %    (out of range =    116)
- (upper limit =   5.0000000000000000      , to be set to   76.722136660785324      )
+ h. or m. efficiency =   0.00475 %    (out of range =      3)
+ (upper limit =   5.0000000000000000      , to be set to   11.547730783243876      )
   
  Events not stored
  Partial cross sections:
-             0  photons:   23.000390657893757       +-  0.44724321024797536                 (npoints:     20000001 )
+             0  photons:   16.486994300840827       +-  0.85719674647593480                 (npoints:      1000000 )
   
  Negative weights statistics:
   n. of weighted points   =           0
@@ -37,12 +37,11 @@
   cross section    0.0000000000000000       +-   0.0000000000000000     
   
  partial q-q['][bar] contributions
-          -1           1     1.5751494198438834E-008 +-   4.4353227011154886E-009 (   28.158107702284418      %)
-           1          -1     23.000390642142268      +-  0.44724321024800057      (   1.9445026704396189      %)
- Sum:    23.000390657893760     
+           1          -1     16.486994300840827      +-  0.85719674647593480      (   5.1992299556518820      %)
+ Sum:    16.486994300840827     
  ....
- Started by user ID        1000  on , process ID       52504
+ Started by user ID        1000  on , process ID        3506
  ....
  Running time statistics:
- program started                   469  s ago
- CPU time =          468  s (of which          463  s user time)
+ program started                    14  s ago
+ CPU time =           14  s (of which           14  s user time)

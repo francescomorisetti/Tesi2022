@@ -8,8 +8,8 @@ Z                             ! boson Drell-Yan production (Z/W+/W-/W+andW-)
 1                             ! EW input scheme
 2                             ! PDF scale choice
 muon                          ! final state lepton(s) (electron/muon/tau)
-test/
-10000000                       ! number of events
+100GeV/
+1000000                       ! number of events
 weighted                      ! if the events are weighted or unweighted
 5.d0                          ! upper limit for unweightening
 no                            ! if events have to be stored
