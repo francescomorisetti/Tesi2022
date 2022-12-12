@@ -3,12 +3,12 @@ born                         ! order of radiative corrections
 2212                          ! initial state leptons
 -2212
 1                             ! PDF set in HORACE
-100.                          ! CoM energy (GeV)
+160                           ! CoM energy (GeV)
 Z                             ! boson Drell-Yan production (Z/W+/W-/W+andW-)
 1                             ! EW input scheme
 2                             ! PDF scale choice
 muon                          ! final state lepton(s) (electron/muon/tau)
-100GeV/
+160GeV/
 1000000                       ! number of events
 weighted                      ! if the events are weighted or unweighted
 5.d0                          ! upper limit for unweightening

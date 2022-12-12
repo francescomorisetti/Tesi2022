@@ -171,7 +171,7 @@
          if (boson.eq.'Z') then
             am = mz
             ag = gz  !larghezza del picco
-            a  = 0.9d0  !parametro per l'andamento a piccolo x
+            a  = 0.8d0  !parametro per l'andamento a piccolo x
 c            a  = 4.d0
          else
             am = mw
@@ -192,7 +192,7 @@ c     >        - atan( ymin*s/am/ag-am/ag ) )
 c         anbw = bwnormstandard(ymax,ymin)
          
          uma  = 1.d0 - a
-         an13 = 1.d0/uma*(ymax**uma - ymin**uma)  !variabili per la cumulativa
+         an13 = 1.d0/uma*((1.d0-ymin)**uma - (1.d0-ymax)**uma)  !variabili per la cumulativa
 
          pbw  = 0.5d0 !probabilità breit-wigner
 c         pbw  = 0.d0
@@ -221,7 +221,8 @@ c            y = y **(1.d0/uma)
  
 c             y = 1.d0 - (1 - uma*rnd(2))**(1.d0/uma)
             
-              y = 1.d0 - (-uma*rnd(2) + (1.d0 - ymin)**uma)**(1.d0/uma)
+              y = -uma*an13*rnd(2) + (1.d0 - ymin)**uma
+              y = 1.d0 - y**(1.d0/uma)
             
 ****************************************************************************            
          wbw  = y/anbw/((y-amaMC*amaMC)**2+amaMC*amaMC*agaMC*agaMC)
@@ -230,7 +231,7 @@ c         wbw  = 1.d0/anbw/((y-amaMC*amaMC)**2+amaMC*amaMC*agaMC*agaMC)
 
 c         womy = 1.d0/y/aln
 c         womy = ymax-ymin  ! flat...
-         womy  = 1.d0/an13/y**a
+         womy  = 1.d0/an13/(1.d0-y)**a
 
          regulator  = 1.d0/(pbw*wbw + pomy*womy)         
          w = w*regulator
