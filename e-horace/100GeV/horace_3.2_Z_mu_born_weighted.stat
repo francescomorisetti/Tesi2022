@@ -1,7 +1,7 @@
   
  Requested number of weighed events:    10000000.000000000     
- Unweighted event n.    995.00000000000000     
- Weighted event n.    13038610.000000000     
+ Unweighted event n.    201.00000000000000     
+ Weighted event n.    13433865.000000000     
  Weighted events after cuts              10000001
   
  Initial state particles:  2212  -2212
@@ -20,16 +20,16 @@
  EW RC: born   (MATCHED QED PS)
   EW input scheme:            1
   
- hit or miss cross section  =       24.5157863 +-        0.7771730 (pb)
- h. or m. out-of-range bias =        2.2614463 +-       0.6467501 (pb)
- weighted cross section     =              NaN +-              NaN (pb)
+ hit or miss cross section  =        4.8067233 +-        0.3390376 (pb)
+ h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
+ weighted cross section     =        4.4689701 +-        0.0014076 (pb)
   
- h. or m. efficiency =   0.00763 %    (out of range =     49)
- (upper limit =   5.0000000000000000      , to be set to   88.838418974091837      )
+ h. or m. efficiency =   0.00150 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to   5.9214329008400396E-004 )
   
  Events not stored
  Partial cross sections:
-             0  photons:                       NaN  +-                       NaN            (npoints:     10000001 )
+             0  photons:   4.4689701170809579       +-   1.4075899773554014E-003            (npoints:     10000001 )
   
  Negative weights statistics:
   n. of weighted points   =           0
@@ -37,10 +37,11 @@
   cross section    0.0000000000000000       +-   0.0000000000000000     
   
  partial q-q['][bar] contributions
- Sum:    0.0000000000000000     
+           1          -1     4.4689701170809579      +-   1.4075899773554014E-003 (   3.1496965530725257E-002 %)
+ Sum:    4.4689701170809579     
  ....
- Started by user ID        1000  on , process ID        3815
+ Started by user ID        1000  on , process ID        4392
  ....
  Running time statistics:
- program started                   155  s ago
- CPU time =          154  s (of which          153  s user time)
+ program started                   122  s ago
+ CPU time =          121  s (of which          121  s user time)

@@ -158,9 +158,12 @@
       subroutine get_x1x2pdf(s,w)
       include 'shared.inc'
       real*4 rnd(2),csi(1)
+      
+     
       common/yminimo/ymin
-
+      
       common/mvgvbwaMC/amaMC,agaMC
+      
       
       w = 1.d0
       if (i_pdf.ne.0) then
@@ -223,6 +226,20 @@ c             y = 1.d0 - (1 - uma*rnd(2))**(1.d0/uma)
             
               y = -uma*an13*rnd(2) + (1.d0 - ymin)**uma
               y = 1.d0 - y**(1.d0/uma)
+
+!Normalization              
+c              y=((1.d0-ymin)**uma - (1.d0-ymax)**uma)/(uma*am*ag)
+c              a1=y*atan((ymax*10000.d0 - am**2)/(am*ag))
+c              a2=y*atan((ymin*10000.d0 - am**2)/(am*ag))
+              
+c              y=a1-a2
+              
+              
+c              y=1.93d0 - (rnd(2)*y*uma*ag*am)**(-1.d0/10.d0)
+              
+
+
+
             
 ****************************************************************************            
          wbw  = y/anbw/((y-amaMC*amaMC)**2+amaMC*amaMC*agaMC*agaMC)

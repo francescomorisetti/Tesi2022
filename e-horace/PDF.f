@@ -18,10 +18,10 @@ c
 
 *     setting PDFs parameters.... 
       if (iwhich.ge.1) then
-         qpdfmin = 1.25d0
-         qpdfmax = 1.d10
-         xpdfmax = 1.d0
-         xpdfmin = 1.d-6
+         qpdfmin = 0.1d0
+         qpdfmax = 1000.0d0
+         xpdfmax = 0.99d0
+         xpdfmin = 1.0d-3
          
 !!            LHAPDF interface
          if (iwhich.eq.1) pdfname="NLL_DELTA_MSBAR"
