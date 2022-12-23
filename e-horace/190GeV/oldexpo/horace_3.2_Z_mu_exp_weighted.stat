@@ -1,0 +1,45 @@
+  
+ Requested number of weighed events:    10000000.000000000     
+ Unweighted event n.    78.000000000000000     
+ Weighted event n.    12204846.000000000     
+ Weighted events after cuts              10000001
+  
+ Initial state particles:  2212  -2212
+ PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+  
+ C. of m. energy =    190.00 GeV
+ Z/photon production, decaying into muons
+  
+ W mass      =    80.358000000000004       GeV
+ W width     =    2.0840000000000001       GeV
+ Z mass      =    91.153499999999994       GeV
+ Z width     =    2.4943000000000000       GeV
+ sin^2(th_w) =   0.22283802942357611     
+ delta_r     =    2.9563345808594349E-002  (one-loop EW delta_r)        
+  
+ QED RC: exp    (OLD QED PS)
+  EW input scheme:            1
+  
+ hit or miss cross section  =        2.0531295 +-        0.2324704 (pb)
+ h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
+ weighted cross section     =        2.2068955 +-        0.0090284 (pb)
+  
+ h. or m. efficiency =   0.00064 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to  0.10320001289470913      )
+  
+ Events not stored
+ Negative weights statistics:
+  n. of weighted points   =           0
+  n. of unweighted events =                    0
+  cross section    0.0000000000000000       +-   0.0000000000000000     
+  
+ partial q-q['][bar] contributions
+          -1           1     6.7152460996675824E-006 +-   1.9221876444203880E-009 (   2.8624232319877898E-002 %)
+           1          -1     2.2068888326330787      +-   6.3170498649433378E-004 (   2.8624232319877898E-002 %)
+ Sum:    2.2068955478791783     
+ ....
+ Started by user ID        1000  on , process ID        8985
+ ....
+ Running time statistics:
+ program started                   130  s ago
+ CPU time =          130  s (of which          130  s user time)

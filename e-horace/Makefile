@@ -160,7 +160,7 @@ forceLT:
 	cd $(LOOPTOOLSDIR)/ && make force && make install
 
 $(EXE): $(LOOPTOOLS) $(CUBALIB) $(LIBSV) $(LIBSVUU) $(LIBSVDD) libHORACE.a main.o
-	$(F77) main.o -L. -lHORACE $(eMELALIB) $(LHAPDFLIB) $(LIBSV) $(LIBSVUU) $(LIBSVDD) $(LOOPTOOLS) $(CUBA) -o $(EXE)
+	$(F77) main.o -L. -lHORACE $(eMELALIB) $(LIBSV) $(LIBSVUU) $(LIBSVDD) $(LOOPTOOLS) $(CUBA) -o $(EXE)
 
 ifeq ($(REPORT),-DREPORT)
 	@echo " "

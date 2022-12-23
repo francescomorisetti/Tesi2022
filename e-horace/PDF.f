@@ -20,7 +20,7 @@ c
       if (iwhich.ge.1) then
          qpdfmin = 0.1d0
          qpdfmax = 1000.0d0
-         xpdfmax = 0.99d0
+         xpdfmax = 0.9999d0
          xpdfmin = 1.0d-3
          
 !!            LHAPDF interface

@@ -35,7 +35,7 @@ c      read*,ipdfreplica
       print*,'Select the calculation of rad. corr. (born/alpha/exp)'
       read(*,'(A)')ord
       print*,'Enter initial state hadrons'
-      print*,'(2212 = proton, -2212 = antiproton)'
+      print*,'(2212 = electron, -2212 = positron)'
       read*,hadr1
       read*,hadr2
       print*,'Select the PDF set according to HORACE scheme'
