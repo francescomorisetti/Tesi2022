@@ -1,0 +1,48 @@
+  
+ Requested number of weighed events:    10000.000000000000     
+ Unweighted event n.    2.0000000000000000     
+ Weighted event n.    14572.000000000002     
+ Weighted events after cuts                 10001
+  
+ Initial state particles:  2212  -2212
+ PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+  
+ C. of m. energy =    100.00 GeV
+ Z/photon production, decaying into muons
+  
+ W mass      =    80.385000000000005       GeV
+ W width     =    2.0850000000000000       GeV
+ Z mass      =    91.177000000000007       GeV
+ Z width     =    2.4952000000000001       GeV
+ sin^2(th_w) =   0.22271652414024412     
+ delta_r     =    0.0000000000000000       (one-loop EW delta_r)        
+  
+ EW RC: born   (MATCHED QED PS)
+  EW input scheme:            0
+  
+ hit or miss cross section  =       41.1777257 +-       29.1150509 (pb)
+ h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
+ weighted cross section     =       11.4615097 +-        0.4802090 (pb)
+  
+ h. or m. efficiency =   0.01372 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to   4.0376000925024767E-002 )
+  
+ Events not stored
+ Partial cross sections:
+             0  photons:   11.461509713546871       +-  0.48020900412067857                 (npoints:        10001 )
+  
+ Negative weights statistics:
+  n. of weighted points   =           0
+  n. of unweighted events =                    0
+  cross section    0.0000000000000000       +-   0.0000000000000000     
+  
+ partial q-q['][bar] contributions
+          22          22    0.14383870734566187      +-   5.8426228107121614E-002 (   40.619266667014948      %)
+           1          -1     11.317671006201211      +-  0.47687576435745388      (   4.2135503328923658      %)
+ Sum:    11.461509713546873     
+ ....
+ Started by user ID        1000  on , process ID       12374
+ ....
+ Running time statistics:
+ program started                     0  s ago
+ CPU time =            0  s (of which            0  s user time)

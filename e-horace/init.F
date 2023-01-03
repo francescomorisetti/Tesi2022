@@ -115,6 +115,12 @@ c      print*,'Enter the EW input scheme: 0=alpha(0), 1=Gmu, 2=IBA'
 
       print*,'Enter seed for the random number generator'
       read*,iseed
+      
+      print*,'Dummy Z boson mass'
+      read*,mz
+      
+      
+      
 c      print*,'Input for cuts:'
 c      print*,'Enter maximum lepton(s) rapidity'
 c      read*,etamax
@@ -150,7 +156,7 @@ c      read*,tmmin
 
 ** REPORT TUNED COMPARISON (AND DEFAULT) SETUP
       mw = 80.385d0       ! W mass
-      mz = 91.1876d0      ! Z mass
+c      mz = 91.1876d0      ! Z mass
       gw =  2.085d0
       gz =  2.4952d0
 

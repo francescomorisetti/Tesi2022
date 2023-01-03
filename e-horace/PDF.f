@@ -73,6 +73,8 @@ c         call evolvePDFphoton(x,s,f,xphot)
       call elpdfq2(0,11,x,1.d0-x,s**2,1.d0,f(1))
       call elpdfq2(0,-11,x,1.d0-x,s**2,1.d0,f(-1))
       call elpdfq2(0,22,x,1.d0-x,s**2,1.d0,f(0))
+      
+      
       xphot = 0.d0
       
       el  =  f(1)/x

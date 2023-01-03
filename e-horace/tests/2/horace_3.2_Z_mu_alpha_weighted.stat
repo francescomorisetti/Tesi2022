@@ -1,0 +1,48 @@
+  
+ Requested number of weighed events:    10000000.000000000     
+ Unweighted event n.    534.00000000000000     
+ Weighted event n.    14055656.000000000     
+ Weighted events after cuts              10000001
+  
+ Initial state particles:  2212  -2212
+ PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+  
+ C. of m. energy =    100.00 GeV
+ Z/photon production, decaying into muons
+  
+ W mass      =    80.358000000000004       GeV
+ W width     =    2.0840000000000001       GeV
+ Z mass      =    91.153499999999994       GeV
+ Z width     =    2.4943000000000000       GeV
+ sin^2(th_w) =   0.22283802942357611     
+ delta_r     =    2.9563345808594349E-002  (one-loop EW delta_r)        
+  
+ EW RC: alpha  (MATCHED QED PS)
+  EW input scheme:            1
+  
+ hit or miss cross section  =       12.2051797 +-        0.5281597 (pb)
+ h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
+ weighted cross section     =       12.3736794 +-        0.0166050 (pb)
+  
+ h. or m. efficiency =   0.00380 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to   7.8193322822691175E-002 )
+  
+ Events not stored
+ Partial cross sections:
+             0  photons:   8.1107888323544763       +-   1.4454470522591198E-002            (npoints:      4278467 )
+             1  photons:   4.2628905249768598       +-   8.4683596755220445E-003            (npoints:      5721534 )
+  
+ Negative weights statistics:
+  n. of weighted points   =           0
+  n. of unweighted events =                    0
+  cross section    0.0000000000000000       +-   0.0000000000000000     
+  
+ partial q-q['][bar] contributions
+           1          -1     12.373679357331698      +-   1.6604970592732530E-002 (  0.13419590174602100      %)
+ Sum:    12.373679357331698     
+ ....
+ Started by user ID        1000  on , process ID        5234
+ ....
+ Running time statistics:
+ program started                   927  s ago
+ CPU time =          925  s (of which          924  s user time)

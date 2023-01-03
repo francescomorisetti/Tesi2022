@@ -185,6 +185,8 @@ c            a  = 4.d0
 
          amaMC = am/sqrt(s)         
          agaMC = ag/sqrt(s)
+         
+        
 
          ymax = xmax*xmax
          
