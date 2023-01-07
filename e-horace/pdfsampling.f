@@ -186,8 +186,6 @@ c            a  = 4.d0
          amaMC = am/sqrt(s)         
          agaMC = ag/sqrt(s)
          
-        
-
          ymax = xmax*xmax
          
 c         anbw = 1.d0/(s*am*ag)*( atan( ymax*s/am/ag-am/ag )

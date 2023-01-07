@@ -118,7 +118,7 @@ c      print*,'Enter the EW input scheme: 0=alpha(0), 1=Gmu, 2=IBA'
       
       print*,'Dummy Z boson mass'
       read*,mz
-      
+      mz=mz*1.0d-3
       
       
 c      print*,'Input for cuts:'
@@ -165,7 +165,7 @@ c      mz = 91.1876d0      ! Z mass
       if (ischemealpha.eq.2) ischemealpha = 1
       if (ischemealpha.eq.1) then
          mw = 80.358d0
-         mz = 91.1535d0
+c         mz = 91.1535d0
          gw =  2.084d0
          gz =  2.4943d0
       endif

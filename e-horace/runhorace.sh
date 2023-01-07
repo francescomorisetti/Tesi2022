@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-decdummy=107
-mz=91.$decdummy
+
+mz=90687
 
 
-for ((i=1; i<=15; ++i))
+for ((i=1; i<=21; ++i))
 do
 
 
@@ -14,8 +14,8 @@ do
         		       
         ./horace < inputfile
 
-        decdummy=$((decdummy+10))
-        mz=91.$decdummy
+       
+        mz=$((mz+50))
        
 done
 exit

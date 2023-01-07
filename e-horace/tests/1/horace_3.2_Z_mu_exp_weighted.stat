@@ -1,0 +1,56 @@
+  
+ Requested number of weighed events:    2000000.0000000000     
+ Unweighted event n.    23.000000000000000     
+ Weighted event n.    2867244.0000000000     
+ Weighted events after cuts               2000001
+  
+ Initial state particles:  2212  -2212
+ PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+  
+ C. of m. energy =    220.00 GeV
+ Z/photon production, decaying into muons
+  
+ W mass      =    80.358000000000004       GeV
+ W width     =    2.0840000000000001       GeV
+ Z mass      =    91.153499999999994       GeV
+ Z width     =    2.4943000000000000       GeV
+ sin^2(th_w) =   0.22283802942357611     
+ delta_r     =    2.9563345808594349E-002  (one-loop EW delta_r)        
+  
+ EW RC: exp    (MATCHED QED PS)
+  EW input scheme:            1
+  
+ hit or miss cross section  =        2.5770167 +-        0.5373430 (pb)
+ h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
+ weighted cross section     =        2.1240597 +-        0.0222875 (pb)
+  
+ h. or m. efficiency =   0.00080 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to  0.19498745539888240      )
+  
+ Events not stored
+ Partial cross sections:
+             0  photons:   1.0895704005963076       +-   1.4304247772389552E-002            (npoints:      1034431 )
+             1  photons:  0.81938258021649080       +-   1.4932540497549543E-002            (npoints:       619777 )
+             2  photons:  0.17922669925514303       +-   7.6038832539675567E-003            (npoints:       259739 )
+             3  photons:   3.1629192800992779E-002  +-   3.4595915389859467E-003            (npoints:        69452 )
+             4  photons:   3.8578291188298810E-003  +-   5.0203612653333717E-004            (npoints:        14078 )
+             5  photons:   3.8601848233719456E-004  +-   1.1875734018836354E-004            (npoints:         2200 )
+             6  photons:   5.9768591309863107E-006  +-   4.6971040823521502E-006            (npoints:          279 )
+             7  photons:   9.3463905885329208E-008  +-   8.5464477054122666E-008            (npoints:           40 )
+             8  photons:   9.3422267252454174E-007  +-   9.3419506473410120E-007            (npoints:            5 )
+  
+ Negative weights statistics:
+  n. of weighted points   =      101752
+  n. of unweighted events =                    0
+  cross section   -4.3237937440524198E-003  +-   3.2642413057923397E-004
+  
+ partial q-q['][bar] contributions
+          -1           1     1.4374915980445083E-005 +-   3.7091827196841965E-006 (   25.803161039201783      %)
+           1          -1     2.1240453500997543      +-   2.2287496708251898E-002 (   1.0492947670446482      %)
+ Sum:    2.1240597250157349     
+ ....
+ Started by user ID        1000  on , process ID       42526
+ ....
+ Running time statistics:
+ program started                   450  s ago
+ CPU time =          450  s (of which          449  s user time)
