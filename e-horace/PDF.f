@@ -25,7 +25,8 @@ c
          
 !!            LHAPDF interface
          if (iwhich.eq.1) pdfname="NLL_DELTA_MSBAR"
-         if (iwhich.eq.2) pdfname="LL_ALGMU"
+         if (iwhich.eq.2) pdfname="LL_MSBAR"
+         if (iwhich.eq.3) pdfname="LL_ALGMU"
          
 	print*,pdfname
 	
@@ -70,18 +71,19 @@ c      if (iwhich.eq.1.or.iwhich.eq.2) then
 c      if (hphot) then
 c         call evolvePDFphoton(x,s,f,xphot)
       s=100.d0
-      call elpdfq2(0,11,x,1.d0-x,s**2,1.d0,f(1))
-      call elpdfq2(0,-11,x,1.d0-x,s**2,1.d0,f(-1))
-      call elpdfq2(0,22,x,1.d0-x,s**2,1.d0,f(0))
+      x=xpdfmax
+      call elpdfq2(0,11,x,1.d0-x,s**2,0.06d0,f(1))
+      call elpdfq2(0,-11,x,1.d0-x,s**2,0.06d0,f(-1))
+      call elpdfq2(0,22,x,1.d0-x,s**2,0.06d0,f(0))
       
       
       xphot = 0.d0
       
-      el  =  f(1)/x
+      el  =  f(1)/x/(1.d0-0.06d0)
       
-      pos =  f(-1)/x
+      pos =  f(-1)/x/(1.d0-0.06d0)
       
-      phot   =  f(0)/x
+      phot   =  f(0)/x/(1.d0-0.06d0)
       
       
 c      phot  =  xphot/x * iphinduced

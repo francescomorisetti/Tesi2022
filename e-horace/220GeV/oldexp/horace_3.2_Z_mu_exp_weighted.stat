@@ -1,31 +1,31 @@
   
  Requested number of weighed events:    10000000.000000000     
- Unweighted event n.    69.000000000000000     
- Weighted event n.    12043644.000000000     
+ Unweighted event n.    10.000000000000000     
+ Weighted event n.    11559583.000000000     
  Weighted events after cuts              10000001
   
  Initial state particles:  2212  -2212
- PDFs: NLL_DELTA_MSBAR                          (eMELA)  
+ PDFs: LL_MSBAR                                 (eMELA)  
   
  C. of m. energy =    220.00 GeV
  Z/photon production, decaying into muons
   
- W mass      =    80.358000000000004       GeV
- W width     =    2.0840000000000001       GeV
- Z mass      =    91.153499999999994       GeV
- Z width     =    2.4943000000000000       GeV
- sin^2(th_w) =   0.22283802942357611     
- delta_r     =    2.9563345808594349E-002  (one-loop EW delta_r)        
+ W mass      =    80.385000000000005       GeV
+ W width     =    2.0850000000000000       GeV
+ Z mass      =    91.187600000000003       GeV
+ Z width     =    2.4952000000000001       GeV
+ sin^2(th_w) =   0.22289722252391819     
+ delta_r     =    0.0000000000000000       (one-loop EW delta_r)        
   
  QED RC: exp    (OLD QED PS)
-  EW input scheme:            1
+  EW input scheme:            0
   
- hit or miss cross section  =        1.8405398 +-        0.2215743 (pb)
+ hit or miss cross section  =        0.2591164 +-        0.0819398 (pb)
  h. or m. out-of-range bias =        0.0000000 +-       0.0000000 (pb)
- weighted cross section     =        2.0729002 +-        0.0098014 (pb)
+ weighted cross section     =        0.1720004 +-        0.0001069 (pb)
   
- h. or m. efficiency =   0.00057 %    (out of range =      0)
- (upper limit =   5.0000000000000000      , to be set to  0.12549716611558887      )
+ h. or m. efficiency =   0.00009 %    (out of range =      0)
+ (upper limit =   5.0000000000000000      , to be set to   4.5675604497939937E-005 )
   
  Events not stored
  Negative weights statistics:
@@ -34,12 +34,12 @@
   cross section    0.0000000000000000       +-   0.0000000000000000     
   
  partial q-q['][bar] contributions
-          -1           1     1.6811131996939456E-005 +-   4.8441546917380860E-009 (   2.8815160648432165E-002 %)
-           1          -1     2.0728833786974317      +-   5.9730467562631336E-004 (   2.8815160648432165E-002 %)
- Sum:    2.0729001898294288     
+          -1           1     5.0876237919938498E-006 +-   1.4963869283968295E-009 (   2.9412295200592898E-002 %)
+           1          -1    0.17199526749683533      +-   5.0587755807218611E-005 (   2.9412295200592898E-002 %)
+ Sum:   0.17200035512062734     
  ....
- Started by user ID        1000  on , process ID        4772
+ Started by user ID        1000  on , process ID        4300
  ....
  Running time statistics:
- program started                   129  s ago
- CPU time =          129  s (of which          129  s user time)
+ program started                   125  s ago
+ CPU time =          125  s (of which          125  s user time)

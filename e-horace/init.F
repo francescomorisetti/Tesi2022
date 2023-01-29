@@ -116,9 +116,10 @@ c      print*,'Enter the EW input scheme: 0=alpha(0), 1=Gmu, 2=IBA'
       print*,'Enter seed for the random number generator'
       read*,iseed
       
-      print*,'Dummy Z boson mass'
-      read*,mz
-      mz=mz*1.0d-3
+c      print*,'Dummy Z boson mass'
+c      read*,mz
+c      mz=mz*1.0d-3ù
+       mz = 91.1876d0
       
       
 c      print*,'Input for cuts:'

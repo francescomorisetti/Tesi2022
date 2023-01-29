@@ -197,7 +197,7 @@ c         anbw = bwnormstandard(ymax,ymin)
          uma  = 1.d0 - a
          an13 = 1.d0/uma*((1.d0-ymin)**uma - (1.d0-ymax)**uma)  !variabili per la cumulativa
 
-         pbw  = 0.5d0 !probabilità breit-wigner
+         pbw  = 0.6d0 !probabilità breit-wigner
 c         pbw  = 0.d0
          pomy = 1.d0 - pbw !canale di x piccolo
 
